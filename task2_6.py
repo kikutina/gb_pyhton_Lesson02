@@ -10,15 +10,22 @@
 # (2, {“название”: “принтер”, “цена”: 6000, “количество”: 2, “eд”: “шт.”}),
 # (3, {“название”: “сканер”, “цена”: 2000, “количество”: 7, “eд”: “шт.”})
 # ]
-name_list = input('Введите название товара: ')
-price_list = input('Введиет стоимость товара: ')
-amount_list = input('Введиет количества товара: ')
-unit_dict = input('Введиет единицу измерения товара: ')
-my_list=[]
-my_dict={}
+b=True
 i=1
-
-goods = int(input('Вы хотите ввести еще товар? да=1 нет=2: '))
-while goods != 2:
-    new_dict = dict
-    n+=1
+date_list=[]
+my_dict = {}
+while b:
+    name_list = input('Введите название товара: ')
+    price_list = input('Введите стоимость товара: ')
+    amount_list = input('Введите количества товара: ')
+    unit_dict = input('Введите единицу измерения товара: ')
+    my_dict['название'] = name_list
+    my_dict['цена'] = price_list
+    my_dict['количество'] = amount_list
+    my_dict['ед'] = unit_dict
+    date_list.append(tuple([i,my_dict]))
+    if input('Продолжить? y/n')=='n':
+        b=False
+    else:
+        i+=1
+print(date_list)
